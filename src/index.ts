@@ -538,7 +538,9 @@ const computeBoundRect = memoize(
 );
 
 function setTranslate(xPos: number, yPos: number, el: HTMLElement, gpuAcceleration: boolean) {
-  el.style.transform = gpuAcceleration
+  /* el.style.transform = gpuAcceleration
     ? `translate3d(${+xPos}px, ${+yPos}px, 0)`
-    : `translate(${+xPos}px, ${+yPos}px)`;
+    : `translate(${+xPos}px, ${+yPos}px)`; */
+    el.style.left = `${+xPos}px`;
+    el.style.top = `${+yPos}px`;
 }
